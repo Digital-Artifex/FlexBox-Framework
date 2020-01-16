@@ -1,0 +1,462 @@
+/*===RESET===*/
+@import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,400i,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Big+Shoulders+Display:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Josefin+Slab:300,700&display=swap");
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  vertical-align: inherit; }
+
+/*=================================================*/
+html {
+  font-size: 62.5%; }
+  @media (max-width: 640px) {
+    html {
+      font-size: 35%; } }
+  @media (min-width: 640px) and (max-width: 960px) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 960px) and (max-width: 1440px) {
+    html {
+      font-size: 62.50%; } }
+
+body {
+  box-sizing: border-box;
+  vertical-align: baseline; }
+
+/*=========================TEXT============================*/
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  line-height: 1.75;
+  font-size: 1.5rem; }
+
+.center {
+  text-align: center; }
+
+.left {
+  text-align: left; }
+
+.right {
+  text-align: right; }
+
+.hide {
+  display: none; }
+
+.show {
+  display: block; }
+
+/*=========================TEXT============================*/
+h1 {
+  font-size: 3.5rem; }
+
+h2 {
+  font-size: 2.5rem; }
+
+h3 {
+  font-size: 2rem; }
+
+h4 {
+  font-size: 1.5rem; }
+
+h5 {
+  font-size: 1.25rem; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "Big Shoulders Display", sans-serif;
+  display: block;
+  color: #54945e;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 1.5rem 0;
+  line-height: 1; }
+
+p {
+  font-family: "Lato", sans-serif;
+  text-align: left;
+  font-size: 1.6rem;
+  line-height: 1.75;
+  letter-spacing: 1px;
+  text-decoration: none;
+  padding: 0px 5px;
+  margin: 10px 0px;
+  color: #545454;
+  font-weight: 100 !important; }
+
+a {
+  text-decoration: none;
+  color: #54945e; }
+
+a:hover {
+  color: #213b25; }
+
+/*==========================================================*/
+/*=================================================*/
+/*============================== GRID ================================== */
+/* The classes .frame, .xl-frame and .wrapper are the containers that hold your content togethers. 
+   They will also ensure functionality on older browsers. Not every one is tech savvy and this 
+   should not be a reason for a user not to see your content. The class ".wrapper" is the main container
+   you can choose to implement in your design for style if you choose to. It is not required.
+
+   BTW: ALL OF THESE CONTAINERS HAVE BORDERS TO HELP VISUALIZE THE LAYOUTS YOU ARE BUILDING. TO GET RID OF THE
+   BORDER JUST TURN "1PX" TO "0PX" OR ERASE THE BORDER PROPERTY COMPLETELY. THIS SYSTEM HAS NO GUTTERS, BUT YOU
+   CAN ADD THEM IF NEEDED. 
+
+   */
+.frame {
+  width: 95%;
+  max-width: 1440px;
+  margin: 0px auto;
+  padding: 3px;
+  border: 0px #F9DDA2 solid; }
+  .frame::after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* fullwidth container*/
+.xl-frame {
+  width: 100%;
+  max-width: 90%;
+  margin: 0px auto;
+  padding: 0px;
+  border: 1px #fe0000 solid; }
+  .xl-frame::after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* ====================================================================
+
+ The class .flexor is the container that envokes the Flexbox properties. 
+
+ I've added media queries to alter the properties of the grid at different
+
+ breakpoints, which simplifies the process. Keep in mind, Flexbox has more
+
+ features that are not being used in this system in favor of simplicity.
+
+
+ =======================================================================*/
+.flexor {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  border: 0px #f2d0d3 solid;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+  .flexor::after {
+    content: "";
+    display: table;
+    clear: both; }
+  @media (max-width: 640px) {
+    .flexor {
+      flex-direction: column;
+      justify-content: flex-start;
+      flex-wrap: nowrap; } }
+  @media (min-width: 640px) and (max-width: 960px) {
+    .flexor {
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: wrap; } }
+  @media (min-width: 960px) and (max-width: 1440px) {
+    .flexor {
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: wrap; } }
+
+/*====================================================================*/
+.wrapper {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  float: left;
+  background-color: #667784; }
+  .wrapper::after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/*
+
+The pre-class "wrap-" is the keyword for every container in the grid system.
+Each class has a unique mane and value, which reflects the width. The classes
+that ends with "-med" means that it will retain the same width value on a 
+smaller screen such as a tablet. This grid system is very intuituve and  
+based on a grid system known as "Lemonade". Feel free to configure and retool it 
+as much as you please. 
+
+*/
+[class*='wrap-'] {
+  padding: 5px;
+  margin: 0px;
+  border: 0px #ff809f solid; }
+
+/*=====================================The GRID=======================================*/
+/* Main Widths */
+.wrap-100 {
+  width: 100%; }
+
+.wrap-90 {
+  width: 90%; }
+
+.wrap-80 {
+  width: 80%; }
+
+.wrap-70 {
+  width: 70%; }
+
+.wrap-75 {
+  width: 75%; }
+
+.wrap-60 {
+  width: 60%; }
+
+.wrap-50 {
+  width: 50%; }
+
+.wrap-40 {
+  width: 40%; }
+
+.wrap-33 {
+  width: 33.33%; }
+
+.wrap-30 {
+  width: 30%; }
+
+.wrap-25 {
+  width: 25%; }
+
+.wrap-20 {
+  width: 20%; }
+
+.wrap-10 {
+  width: 10%; }
+
+.wrap-75-med {
+  width: 75%; }
+
+.wrap-70-med {
+  width: 70%; }
+
+.wrap-60-med {
+  width: 60%; }
+
+.wrap-50-med {
+  width: 50%; }
+
+.wrap-40-med {
+  width: 40%; }
+
+.wrap-30-med {
+  width: 30%; }
+
+.wrap-25-med {
+  width: 25%; }
+
+/* Landscape mobile & down
+===============================*/
+@media (max-width: 640px) {
+  .wrap-100,
+  .wrap-90,
+  .wrap-80,
+  .wrap-70,
+  .wrap-75,
+  .wrap-60,
+  .wrap-50,
+  .wrap-40,
+  .wrap-33,
+  .wrap-30,
+  .wrap-25,
+  .wrap-20,
+  .wrap-10 {
+    width: 100%; }
+  .wrap-75-med {
+    width: 100%; }
+  .wrap-70-med {
+    width: 100%; }
+  .wrap-60-med {
+    width: 100%; }
+  .wrap-50-med {
+    width: 100%; }
+  .wrap-40-med {
+    width: 100%; }
+  .wrap-30-med {
+    width: 100%; }
+  .wrap-25-med {
+    width: 100%; } }
+
+/* Mobile to Tablet Portrait
+===============================*/
+@media (min-width: 640px) and (max-width: 960px) {
+  .wrap-100 {
+    width: 100%; }
+  .wrap-90 {
+    width: 100%; }
+  .wrap-80 {
+    width: 100%; }
+  .wrap-70 {
+    width: 100%; }
+  .wrap-60 {
+    width: 100%; }
+  .wrap-50 {
+    width: 100%; }
+  .wrap-40 {
+    width: 100%; }
+  .wrap-33 {
+    width: 33.33%; }
+  .wrap-30 {
+    width: 100%; }
+  .wrap-20 {
+    width: 100%; }
+  .wrap-75 {
+    width: 100%; }
+  .wrap-25 {
+    width: 100%; }
+  .wrap-10 {
+    width: 20%; }
+  .wrap-75-med {
+    width: 75%; }
+  .wrap-70-med {
+    width: 70%; }
+  .wrap-60-med {
+    width: 60%; }
+  .wrap-50-med {
+    width: 50%; }
+  .wrap-40-med {
+    width: 40%; }
+  .wrap-30-med {
+    width: 30%; }
+  .wrap-25-med {
+    width: 25%; } }
+
+/* Landscape Tablet to Desktop
+===============================*/
+@media (min-width: 960px) and (max-width: 1440px) {
+  .wrap-100 {
+    width: 100%; }
+  .wrap-90 {
+    width: 90%; }
+  .wrap-80 {
+    width: 80%; }
+  .wrap-75 {
+    width: 75%; }
+  .wrap-70 {
+    width: 70%; }
+  .wrap-60 {
+    width: 60%; }
+  .wrap-50 {
+    width: 50%; }
+  .wrap-40 {
+    width: 40%; }
+  .wrap-33 {
+    width: 33.33%; }
+  .wrap-30 {
+    width: 30%; }
+  .wrap-25 {
+    width: 25%; }
+  .wrap-20 {
+    width: 20%; }
+  .wrap-10 {
+    width: 10%; }
+  .wrap-75-med {
+    width: 75%; }
+  .wrap-70-med {
+    width: 70%; }
+  .wrap-60-med {
+    width: 60%; }
+  .wrap-50-med {
+    width: 50%; }
+  .wrap-40-med {
+    width: 40%; }
+  .wrap-30-med {
+    width: 30%; }
+  .wrap-25-med {
+    width: 25%; } }
+
+header.fallback {
+  min-height: 5rem;
+  position: relative;
+  padding: 0px;
+  margin: 0;
+  background: #213b25; }
+  header.fallback::after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/*=============================================================================================*/
+h1 {
+  color: #fff;
+  cursor: pointer;
+  line-height: 1; }
+  h1:hover {
+    color: #b3e885; }
+
+.box {
+  background-color: #54945e;
+  background: #54945e;
+  cursor: pointer;
+  padding: 15px 0px;
+  border-radius: 5px; }
+  .box:hover {
+    background: #204426; }
+  .box p {
+    text-align: center;
+    font-size: 1.9rem;
+    color: #fff;
+    cursor: pointer;
+    padding: 25px 0px 25px 0px; }
+
+::-webkit-scrollbar {
+  width: 20px; }
+
+::-webkit-scrollbar-track {
+  background-color: #667784;
+  /*box-shadow: inset 0 0 5px grey;*/
+  border-radius: 0px; }
+
+::-webkit-scrollbar-thumb {
+  background: #213b25;
+  border-radius: 0px; }
+
+::-webkit-scrollbar-thumb:hover {
+  background: #374e3a; }
+
+/*===========================FOOTER SECTION=============================*/
+footer.fallback {
+  float: left;
+  width: 100%;
+  background: #213b25;
+  position: relative;
+  padding: 2.5rem 0;
+  height: 19rem;
+  margin: 0; }
+  footer.fallback::after {
+    content: "";
+    display: table;
+    clear: both; }
+
+footer.fallback p {
+  width: 100%;
+  margin: 10px 0px 5px 0px;
+  letter-spacing: 1px;
+  font-size: 1.7rem;
+  font-weight: 100;
+  line-height: 1.3em;
+  min-height: 25px;
+  text-align: center;
+  color: #f5f5f5;
+  padding-top: 1.5rem;
+  border-top: 1px #54945e solid;
+  font-family: "Josefin Slab", serif !important;
+  text-align: center; }
+
+/*--------------------------------------------------------------------*/

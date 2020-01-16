@@ -1,0 +1,236 @@
+
+
+
+/*============================== GRID ================================== */
+
+/* The classes .frame, .xl-frame and .wrapper are the containers that hold your content togethers. 
+   They will also ensure functionality on older browsers. Not every one is tech savvy and this 
+   should not be a reason for a user not to see your content. The class ".wrapper" is the main container
+   you can choose to implement in your design for style if you choose to. It is not required.
+
+   BTW: ALL OF THESE CONTAINERS HAVE BORDERS TO HELP VISUALIZE THE LAYOUTS YOU ARE BUILDING. TO GET RID OF THE
+   BORDER JUST TURN "1PX" TO "0PX" OR ERASE THE BORDER PROPERTY COMPLETELY. THIS SYSTEM HAS NO GUTTERS, BUT YOU
+   CAN ADD THEM IF NEEDED. 
+
+   */
+
+
+.frame 
+{
+  width: 95%; 
+  max-width:1440px; 
+  margin: 0px auto; 
+  padding:3px; 
+  border:0px #F9DDA2 solid; 
+
+     &::after{content: "";display: table;clear: both;}
+
+}
+
+
+/* fullwidth container*/
+
+.xl-frame {width: 100%; max-width:90%; margin: 0px auto; 
+  padding:0px; border:1px #fe0000 solid; 
+
+     &::after{content: "";display: table;clear: both;}
+
+}
+
+ /* ====================================================================
+
+ The class .flexor is the container that envokes the Flexbox properties. 
+
+ I've added media queries to alter the properties of the grid at different
+
+ breakpoints, which simplifies the process. Keep in mind, Flexbox has more
+
+ features that are not being used in this system in favor of simplicity.
+
+
+ =======================================================================*/
+
+.flexor {width: 100%; display: flex; flex-direction: row; justify-content: flex-start;
+   flex-wrap:wrap; border:0px #f2d0d3 solid; padding:0; margin:0;  
+  box-sizing: border-box;
+
+     &::after{content: "";display: table;clear: both;}
+
+       @include respond(phone){
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap:nowrap;
+  }
+
+  @include respond(tablet){
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap:wrap;
+  }
+
+  @include respond(desktop){
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap:wrap;
+
+  }
+}
+
+/*====================================================================*/
+
+.wrapper
+{
+  width:100%; 
+  margin:0px; 
+  padding:0px; 
+  float:left; 
+  background-color: $base-contrast;
+     
+     &::after{content: "";display: table;clear: both;}
+}
+
+
+/*
+
+The pre-class "wrap-" is the keyword for every container in the grid system.
+Each class has a unique mane and value, which reflects the width. The classes
+that ends with "-med" means that it will retain the same width value on a 
+smaller screen such as a tablet. This grid system is very intuituve and  
+based on a grid system known as "Lemonade". Feel free to configure and retool it 
+as much as you please. 
+
+*/
+
+[class*='wrap-'] 
+{padding: 5px; margin:0px; 
+  border: 0px $pink solid;}
+
+
+
+
+/*=====================================The GRID=======================================*/
+
+
+/* Main Widths */
+.wrap-100 {width: 100%;}
+.wrap-90  {width: 90%;}
+.wrap-80  {width: 80%;}
+.wrap-70  {width: 70%}
+.wrap-75  {width: 75%}
+.wrap-60  {width: 60%;}
+.wrap-50  {width: 50%;}
+.wrap-40  {width: 40%;}
+.wrap-33  {width: 33.33%;}
+.wrap-30  {width: 30%;}
+.wrap-25  {width: 25%;}
+.wrap-20  {width: 20%;}
+.wrap-10  {width: 10%;}
+
+
+.wrap-75-med  {width: 75%;}
+.wrap-70-med  {width: 70%;}
+.wrap-60-med  {width: 60%;}
+.wrap-50-med  {width: 50%;}
+.wrap-40-med  {width: 40%;}
+.wrap-30-med  {width: 30%;}
+.wrap-25-med  {width: 25%;} 
+
+
+
+
+/* Landscape mobile & down
+===============================*/
+@include respond(phone) {
+ 
+  .wrap-100,
+  .wrap-90,
+  .wrap-80,
+  .wrap-70,
+  .wrap-75,
+  .wrap-60,
+  .wrap-50,
+  .wrap-40,
+  .wrap-33,
+  .wrap-30,
+  .wrap-25,
+  .wrap-20,
+  .wrap-10
+ {width: 100%;}
+
+
+
+.wrap-75-med  {width: 100%;}
+.wrap-70-med  {width: 100%;}
+.wrap-60-med  {width: 100%;}
+.wrap-50-med  {width: 100%;}
+.wrap-40-med  {width: 100%;}
+.wrap-30-med  {width: 100%;}
+.wrap-25-med  {width: 100%;}
+
+
+
+}
+
+
+
+/* Mobile to Tablet Portrait
+===============================*/
+@include respond(tablet) {
+
+.wrap-100  {width: 100%;}
+.wrap-90  {width: 100%;}
+.wrap-80  {width: 100%;}
+.wrap-70  {width: 100%;}
+.wrap-60  {width: 100%;}
+.wrap-50  {width: 100%;}
+.wrap-40  {width: 100%;}
+.wrap-33  {width: 33.33%;}
+.wrap-30  {width: 100%;}
+.wrap-20  {width: 100%;}
+.wrap-75  {width: 100%;}
+.wrap-25  {width: 100%;} 
+.wrap-10  {width: 20%;}
+
+.wrap-75-med  {width: 75%;}
+.wrap-70-med  {width: 70%;}
+.wrap-60-med  {width: 60%;}
+.wrap-50-med  {width: 50%;}
+.wrap-40-med  {width: 40%;}
+.wrap-30-med  {width: 30%;}
+.wrap-25-med  {width: 25%;}
+
+}
+
+
+
+/* Landscape Tablet to Desktop
+===============================*/
+ @include respond(desktop) {
+
+.wrap-100  {width: 100%;}
+.wrap-90  {width: 90%;}
+.wrap-80  {width: 80%;}
+.wrap-75  {width: 75%;}
+.wrap-70  {width: 70%;}
+.wrap-60  {width: 60%;}
+.wrap-50  {width: 50%;}
+.wrap-40  {width: 40%;}
+.wrap-33  {width: 33.33%;}
+.wrap-30  {width: 30%;}
+.wrap-25  {width: 25%;} 
+.wrap-20  {width: 20%;}
+.wrap-10  {width: 10%;}
+
+.wrap-75-med  {width: 75%;}
+.wrap-70-med  {width: 70%;}
+.wrap-60-med  {width: 60%;}
+.wrap-50-med  {width: 50%;}
+.wrap-40-med  {width: 40%;}
+.wrap-30-med  {width: 30%;}
+.wrap-25-med  {width: 25%;} 
+
+
+}
+
+
+

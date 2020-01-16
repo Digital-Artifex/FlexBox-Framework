@@ -1,0 +1,63 @@
+
+
+$base:#54945e;   
+
+$base-contrast:#667784;
+
+$darkbase:#213b25;
+
+$litebase:#659e6e;
+
+$highlite:#b3e885;
+
+$standard:#545454;
+
+$black:#000;
+
+$blue:#173BF8;
+
+$green:#145e33;
+
+$red:#900000;
+
+$orange:#ed8032;
+
+$yellow:#edde32;
+
+$pink:#ff809f;
+
+$white:#fff;
+
+$offwhite:#f5f5f5;
+
+$grey:#999;
+
+
+
+
+
+/*=================================================*/
+
+@mixin colored_box($color: $base){
+  background-color: $color;
+}
+
+
+
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 640px) {@content};  //640px
+    }
+
+    @if $breakpoint == tablet{
+        @media(min-width: 640px) and (max-width: 960px) {@content};  //960px
+    }
+
+    @if $breakpoint == desktop {
+        @media(min-width: 960px) and (max-width: 1440px) {@content}; //1280px
+    }
+
+   
+
+}
